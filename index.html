@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arshi Khan - AI/ML Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a4d2e;
+            --secondary: #4f772d;
+            --accent: #90a955;
+            --light: #ecf39e;
+            --dark: #132a13;
+            --text: #2d3e2f;
+            --bg: #fafdf6;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+            opacity: 0.3;
+            z-index: 0;
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 77, 46, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 1rem auto 0;
+        }
+
+        /* Professional Background */
+        .background-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .background-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .background-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .background-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .background-card .subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Technical Expertise */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .skill-category h4 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--light);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Featured Artifacts */
+        .artifacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .artifact-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+        }
+
+        .artifact-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            color: white;
+        }
+
+        .artifact-header h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .artifact-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .artifact-body {
+            padding: 2rem;
+        }
+
+        .artifact-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-tag {
+            background: var(--light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .artifact-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .artifact-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact h2::after {
+            background: var(--light);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .artifacts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Arshi Khan</h1>
+                <p class="tagline">AI/ML Professional | Bridging HCM Expertise with Generative AI Innovation</p>
+                <p class="hero-description">
+                    Graduate AI student with 10+ years of HCM and QA experience, currently pursuing M.S. in Computer Information Systems (Generative AI specialization). Specializing in applying AI quality assurance, prompt engineering, and human-in-the-loop methodologies to enterprise solutions.
+                </p>
+                <div class="btn-group">
+                    <a href="#artifacts" class="btn btn-primary">View Artifacts</a>
+                    <a href="#background" class="btn btn-secondary">Professional Background</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Background -->
+    <section id="background">
+        <div class="container">
+            <h2>Professional Background</h2>
+            <div class="background-grid">
+                <div class="background-card">
+                    <h3>HCM & Enterprise Systems</h3>
+                    <p class="subtitle">10+ Years of Functional Expertise</p>
+                    <p>Deep experience in Workday HCM, SAP HCM, and enterprise HR systems. Specialized in Absence Management, Time Tracking, and Payroll configuration across global, multi-country implementations.</p>
+                </div>
+
+                <div class="background-card">
+                    <h3>Quality Assurance Leadership</h3>
+                    <p class="subtitle">Testing & Automation</p>
+                    <p>Led end-to-end QA for large-scale enterprise projects, including functional testing, regression automation, UAT coordination, and cross-functional stakeholder delivery at Deutsche Bank and ADP.</p>
+                </div>
+
+                <div class="background-card">
+                    <h3>AI & Emerging Technologies</h3>
+                    <p class="subtitle">Graduate AI Studies</p>
+                    <p>Currently pursuing M.S. in Computer Information Systems with Generative AI specialization at Indiana Wesleyan University. Applying AI output validation, prompt engineering, and quality assurance methodologies to HR technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise -->
+    <section id="expertise">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>AI & Machine Learning</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">AI Quality Assurance</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>HCM & HR Systems</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Workday HCM</span>
+                        <span class="skill-tag">SAP HCM</span>
+                        <span class="skill-tag">Absence Management</span>
+                        <span class="skill-tag">Time Tracking</span>
+                        <span class="skill-tag">Payroll</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>QA & Testing</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Functional Testing</span>
+                        <span class="skill-tag">Test Automation</span>
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">UAT Leadership</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Confluence</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">API Testing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artifacts -->
+    <section id="artifacts">
+        <div class="container">
+            <h2>Featured Artifacts</h2>
+            <div class="artifacts-grid">
+                <div class="artifact-card">
+                    <div class="artifact-header">
+                        <h3>ML Algorithms Framework</h3>
+                        <p class="artifact-subtitle">Machine Learning Algorithms: A Visual Guide</p>
+                    </div>
+                    <div class="artifact-body">
+                        <div class="artifact-meta">
+                            <span class="meta-tag">Supervised Learning</span>
+                            <span class="meta-tag">Unsupervised Learning</span>
+                            <span class="meta-tag">Deep Learning</span>
+                            <span class="meta-tag">Generative AI</span>
+                        </div>
+                        <p>Comprehensive visual framework categorizing 10 fundamental machine learning algorithms across four key domains: Tabular Data, Computer Vision, Natural Language Processing, and Generative AI. Each algorithm includes classification, practical examples, and real-world applications.</p>
+                        <a href="ml-algorithms.html" class="artifact-link">View Framework →</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder for future artifacts -->
+                <div class="artifact-card" style="opacity: 0.5;">
+                    <div class="artifact-header">
+                        <h3>Coming Soon</h3>
+                        <p class="artifact-subtitle">Future Project</p>
+                    </div>
+                    <div class="artifact-body">
+                        <p>More AI/ML projects and case studies coming soon as I progress through my graduate coursework.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="max-width: 600px; margin: 1rem auto 2rem; font-size: 1.1rem;">
+                Open to opportunities in AI/ML, QA Leadership, and HCM Systems where I can apply my interdisciplinary background to build innovative and responsible enterprise solutions.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:arshi.khan1203@gmail.com" class="contact-link">Email</a>
+                <a href="https://www.linkedin.com/in/arshi-khan-99bb6b349" target="_blank" class="contact-link">LinkedIn</a>
+                <a href="https://github.com/arshi-khan1203" target="_blank" class="contact-link">GitHub</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Algorithms Framework - Arshi Khan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a4d2e;
+            --secondary: #4f772d;
+            --accent: #90a955;
+            --light: #ecf39e;
+            --dark: #132a13;
+            --text: #2d3e2f;
+            --bg: #fafdf6;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .meta-info {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-embed {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .presentation-embed p {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 77, 46, 0.3);
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="header">
+            <h1>Machine Learning Algorithms: A Visual Framework</h1>
+            <p class="subtitle">Classification by Application Domain</p>
+            <div class="meta-info">
+                Arshi Khan | 3SU2026 Model Development (AIML-501-01R3A) | Professor: John Wishart | May 2026
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p>This project explores the landscape of machine learning algorithms by organizing them according to their primary application domains and learning approaches. As artificial intelligence continues to expand across industries, understanding which algorithms work best for specific types of data and problems has become essential for effective model development. This visual framework provides a clear reference for algorithm selection based on whether you are working with tabular data, images, text, or generative applications.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Description</h2>
+            <p>This visual framework categorizes 10 fundamental machine learning algorithms across four key domains: Tabular Data, Computer Vision, Natural Language Processing, and Generative AI. Each algorithm is classified by learning type (supervised or unsupervised) and includes real-world application examples.</p>
+
+            <div class="tag-container">
+                <span class="tag">Supervised Learning</span>
+                <span class="tag">Unsupervised Learning</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Generative AI</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Visual Framework</h2>
+            <div class="presentation-embed">
+                <p>Download the complete visual framework presentation:</p>
+                <a href="ML_Algorithms_Framework.pptx" class="download-btn" download>Download PowerPoint Presentation</a>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                The presentation contains 7 slides covering algorithm classifications, domain-specific applications, and key relationships between different algorithm types.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Objective</h2>
+            <p>The primary objective of this project was to create a clear, visually organized reference illustrating the relationship between machine learning algorithms and their practical applications. By mapping algorithms to specific domains and providing concrete use cases, this framework serves as a decision-making tool for selecting appropriate algorithms based on data type and problem requirements. Additionally, this project demonstrates my ability to synthesize technical concepts into accessible visual communication.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Process</h2>
+            <p>The development process began with researching and selecting 10 algorithms that represent the core techniques used across major AI/ML domains. I analyzed each algorithm to determine its classification (supervised vs. unsupervised) and primary application areas. The algorithms were then organized by domain rather than by learning type, as this structure better reflects how practitioners approach real-world problems.</p>
+            
+            <p>I created a multi-slide visual presentation that groups algorithms by their application domain, with each slide providing the algorithm name, learning type, brief explanation of how it works, and concrete examples. The final slide synthesizes key insights about algorithm relationships and selection criteria.</p>
+
+            <h3>Algorithm Coverage</h3>
+            <ul>
+                <li><strong>Tabular Data (5 algorithms):</strong> Linear Regression, Logistic Regression, Decision Trees, Random Forest, Support Vector Machines, K-Means Clustering</li>
+                <li><strong>Computer Vision (2 algorithms):</strong> Convolutional Neural Networks (CNN), Support Vector Machines (SVM)</li>
+                <li><strong>Natural Language Processing (2 algorithms):</strong> Recurrent Neural Networks (RNN), Transformer Models</li>
+                <li><strong>Generative AI (2 algorithms):</strong> Transformer Models, Generative Adversarial Networks (GAN)</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Tools and Technologies Used</h2>
+            <ul>
+                <li>Microsoft PowerPoint for visual framework design</li>
+                <li>GitHub Pages for portfolio presentation</li>
+                <li>Research sources on machine learning algorithms and applications</li>
+                <li>Course materials from Model Development (AIML-501)</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Value Proposition</h2>
+            
+            <h3>Unique Value</h3>
+            <p>This framework distinguishes itself by organizing algorithms according to practical application domains rather than purely theoretical categories. This approach mirrors how data scientists and ML engineers actually make algorithm selection decisions in practice. The visual format makes complex technical concepts accessible while maintaining accuracy, and the inclusion of real-world examples bridges the gap between theory and application.</p>
+
+            <h3>Relevance</h3>
+            <p>Understanding algorithm selection is fundamental to successful model development. This framework provides a practical reference for determining which algorithms to consider when faced with different types of data and problems. As machine learning continues to evolve, having a solid grasp of core algorithms and their appropriate use cases remains essential for anyone working in AI/ML development, data science, or related fields.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>References</h2>
+            <ul>
+                <li>Course materials: 3SU2026 Model Development (AIML-501-01R3A)</li>
+                <li>Indiana Wesleyan University, Department of Computer Information Systems</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
