@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explainable AI (XAI) - Arshi Khan Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a4d2e;
+            --secondary: #4f772d;
+            --accent: #90a955;
+            --light: #ecf39e;
+            --dark: #132a13;
+            --text: #2d3e2f;
+            --bg: #fafdf6;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .artifact-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0 3rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: white; }
+
+        .artifact-hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .artifact-hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 650px;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .meta-tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Body */
+        .artifact-body {
+            padding: 3.5rem 0;
+        }
+
+        .section-block {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent);
+        }
+
+        .section-block h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .section-block h2::after { display: none; }
+
+        .section-block p {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-block p:last-child { margin-bottom: 0; }
+
+        .section-block ul {
+            padding-left: 1.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .section-block ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        /* Slide summary grid */
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .slide-card {
+            background: var(--bg);
+            border: 1px solid #dde8d0;
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+        }
+
+        .slide-card .slide-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .slide-card h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .slide-card p {
+            font-size: 0.9rem;
+            color: #5a6a4a;
+            margin-bottom: 0;
+        }
+
+        /* Download button */
+        .download-block {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26,77,46,0.3);
+        }
+
+        /* Footer nav */
+        .footer-nav {
+            border-top: 1px solid #dde8d0;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover { color: var(--primary); }
+
+        @media (max-width: 600px) {
+            .artifact-hero h1 { font-size: 2rem; }
+            .section-block { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="artifact-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Explainable AI (XAI)</h1>
+            <p>Transparency, Validation and Trust in Generative AI Models</p>
+            <div class="meta-row">
+                <span class="meta-tag">Explainable AI</span>
+                <span class="meta-tag">Model Transparency</span>
+                <span class="meta-tag">Validation Metrics</span>
+                <span class="meta-tag">GPT</span>
+                <span class="meta-tag">Claude</span>
+                <span class="meta-tag">Gemini</span>
+                <span class="meta-tag">LLaMA</span>
+                <span class="meta-tag">AIML-501 | Workshop 4 and 5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="artifact-body">
+        <div class="container">
+
+            <!-- Overview -->
+            <div class="section-block">
+                <h2>Overview</h2>
+                <p>This artifact is a six-slide visual presentation created for AIML-501 (Model Development) at Indiana Wesleyan University. It explores Explainable AI (XAI) as it applies to large language models including GPT, Claude, Gemini, and LLaMA, covering core concepts, challenges, validation techniques, and current industry solutions.</p>
+                <p>The presentation is designed to communicate complex AI transparency topics in a clear, accessible format for both technical and non-technical audiences.</p>
+            </div>
+
+            <!-- Slide Summary -->
+            <div class="section-block">
+                <h2>Presentation Overview</h2>
+                <div class="slides-grid">
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 1</div>
+                        <h4>Title</h4>
+                        <p>Introduction to XAI with models explored: GPT, Claude, Gemini, LLaMA.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 2</div>
+                        <h4>What is XAI?</h4>
+                        <p>Definition of explainable AI and four key reasons transparency matters: trust, compliance, bias detection, and improvement.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 3</div>
+                        <h4>Challenges</h4>
+                        <p>Five core obstacles: black box complexity, data bias, post-hoc explanations, regulatory risk, and scale constraints.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 4</div>
+                        <h4>Validation and Metrics</h4>
+                        <p>Validation techniques (cross-validation, adversarial testing) and performance metrics (accuracy, F1, ROC-AUC) that support model reliability.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 5</div>
+                        <h4>Industry Solutions</h4>
+                        <p>Current XAI approaches by OpenAI, Anthropic, Google, and Meta including Constitutional AI, RLHF, and open-source transparency efforts.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 6</div>
+                        <h4>References</h4>
+                        <p>APA-formatted citations for all sources used across the presentation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explanatory Document -->
+            <div class="section-block">
+                <h2>Explanatory Document</h2>
+                <p>Explainable AI (XAI) refers to the set of methods and principles that make the outputs and decisions of AI models understandable to humans. As large language models like GPT, Claude, Gemini, and LLaMA are deployed in high-stakes domains such as healthcare, finance, and law, the ability to interpret and justify their decisions becomes critical. This presentation highlights the core challenges that make LLMs difficult to explain, including their black-box architecture, reliance on post-hoc explanations, embedded data biases, and the growing gap between model scale and interpretability. It also examines how validation techniques, such as cross-validation, adversarial testing, and human evaluation, combined with performance metrics like precision, recall, F1 score, and ROC-AUC, play a key role in building trust in AI systems by providing measurable evidence of model reliability and fairness.</p>
+                <p>The second focus of this artifact is current industry efforts to close the explainability gap. Organizations like Anthropic (Constitutional AI), OpenAI (chain-of-thought prompting and RLHF), Google (attention visualization and PAIR tools), and Meta (open-source release and red-teaming) are each taking distinct approaches to improve transparency and accountability. The presentation uses a clean card-based layout to make these complex topics accessible to non-technical stakeholders, reflecting the belief that effective AI communication is as important as technical performance. Design choices prioritized visual clarity, consistent color coding by theme, and concise language to ensure the content is both informative and immediately comprehensible.</p>
+            </div>
+
+            <!-- Skills Demonstrated -->
+            <div class="section-block">
+                <h2>Skills Demonstrated</h2>
+                <ul>
+                    <li>Research and synthesis of XAI concepts across academic and industry sources</li>
+                    <li>Clear communication of technical AI topics for non-technical audiences</li>
+                    <li>Application of validation techniques and performance metrics to assess model reliability</li>
+                    <li>Comparative analysis of explainability approaches across leading AI organizations</li>
+                    <li>Professional visual design and presentation development</li>
+                </ul>
+            </div>
+
+            <!-- Download -->
+            <div class="download-block">
+                <a href="Assignment_4.4_Explainability.pptx" class="btn-download">Download Presentation (PPTX)</a>
+            </div>
+
+            <div class="footer-nav">
+                <a href="index.html">&larr; Back to Portfolio</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
