@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Trained Model Trade-Offs - Arshi Khan Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a4d2e;
+            --secondary: #4f772d;
+            --accent: #90a955;
+            --light: #ecf39e;
+            --dark: #132a13;
+            --text: #2d3e2f;
+            --bg: #fafdf6;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .artifact-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0 3rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: white; }
+
+        .artifact-hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .artifact-hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 650px;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .meta-tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .artifact-body {
+            padding: 3.5rem 0;
+        }
+
+        .section-block {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent);
+        }
+
+        .section-block h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .section-block h2::after { display: none; }
+
+        .section-block p {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-block p:last-child { margin-bottom: 0; }
+
+        .section-block ul {
+            padding-left: 1.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .section-block ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .slide-card {
+            background: var(--bg);
+            border: 1px solid #dde8d0;
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+        }
+
+        .slide-card .slide-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .slide-card h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .slide-card p {
+            font-size: 0.9rem;
+            color: #5a6a4a;
+            margin-bottom: 0;
+        }
+
+        .download-block {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26,77,46,0.3);
+        }
+
+        .footer-nav {
+            border-top: 1px solid #dde8d0;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover { color: var(--primary); }
+
+        @media (max-width: 600px) {
+            .artifact-hero h1 { font-size: 2rem; }
+            .section-block { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="artifact-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Pre-Trained Model Trade-Offs</h1>
+            <p>A Decision Matrix for Model Selection Across Domains</p>
+            <div class="meta-row">
+                <span class="meta-tag">BERT</span>
+                <span class="meta-tag">GPT-4</span>
+                <span class="meta-tag">MobileNet</span>
+                <span class="meta-tag">XGBoost</span>
+                <span class="meta-tag">Model Selection</span>
+                <span class="meta-tag">Trade-Off Analysis</span>
+                <span class="meta-tag">AIML-501 | Workshop 5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="artifact-body">
+        <div class="container">
+
+            <div class="section-block">
+                <h2>Overview</h2>
+                <p>This artifact is a six-slide visual presentation created for AIML-501 (Model Development) at Indiana Wesleyan University. It compares four pre-trained models across four domains: BERT (NLP), GPT-4 (Generative AI), MobileNet (Computer Vision), and XGBoost (Tabular Data), using a color-coded decision matrix to make trade-offs immediately readable for both technical and non-technical audiences.</p>
+                <p>The core argument is that no single model is universally optimal. Effective model selection requires deliberate analysis of size, accuracy, speed, explainability, data requirements, and deployment cost in the context of the specific use case.</p>
+            </div>
+
+            <div class="section-block">
+                <h2>Presentation Overview</h2>
+                <div class="slides-grid">
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 1</div>
+                        <h4>Title</h4>
+                        <p>Introduction to the decision matrix covering all four domains.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 2</div>
+                        <h4>Why Model Selection Matters</h4>
+                        <p>The challenge of balancing size, accuracy, and speed across NLP, Vision, and Tabular domains.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 3</div>
+                        <h4>Model Profiles</h4>
+                        <p>Side-by-side cards with benchmark data on size, accuracy, and inference speed for all four models.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 4</div>
+                        <h4>Decision Matrix</h4>
+                        <p>Color-coded comparison table across six criteria: size, accuracy, speed, explainability, data requirements, and deployment cost.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 5</div>
+                        <h4>Analysis and Recommendations</h4>
+                        <p>When to choose each model based on domain, constraints, and use case requirements.</p>
+                    </div>
+                    <div class="slide-card">
+                        <div class="slide-num">Slide 6</div>
+                        <h4>References</h4>
+                        <p>APA-formatted citations for all benchmark data and sources used.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>Explanatory Document</h2>
+                <p>This artifact presents a visual decision matrix comparing four pre-trained models across four domains: BERT (NLP), GPT-4 (Generative AI), MobileNet (Computer Vision), and XGBoost (Tabular Data). The presentation examines each model across six criteria including model size, accuracy, inference speed, explainability, data requirements, and deployment cost. The core argument is that no single model is universally optimal. Model selection requires deliberate trade-off analysis based on the deployment context, available resources, and task requirements. BERT offers strong NLP accuracy at manageable compute cost but lacks explainability. GPT-4 delivers unmatched reasoning capability but at significant size and cost. MobileNet excels in speed and efficiency for edge vision tasks while accepting moderate accuracy trade-offs. XGBoost stands out as the most interpretable and resource-efficient option for structured data, making it particularly valuable in regulated industries where explainability is a requirement rather than a preference.</p>
+                <p>The color-coded decision matrix was chosen as the primary visual format because it allows viewers to compare models across multiple criteria simultaneously without requiring deep technical knowledge. Green indicates favorable characteristics such as small size, high speed, or strong explainability. Amber signals moderate trade-offs, and red highlights less favorable attributes for resource-constrained or transparency-focused deployments. This visual encoding makes the trade-offs immediately readable at a glance. The card-based model profile slide was designed to present each model's specifications in a consistent, scannable format, ensuring the audience can quickly locate the data points most relevant to their use case. Overall, the presentation reflects the principle that effective AI decision-making requires understanding not just what a model can do, but what it costs and whether its decisions can be explained.</p>
+            </div>
+
+            <div class="section-block">
+                <h2>Skills Demonstrated</h2>
+                <ul>
+                    <li>Research and synthesis of model specifications from published benchmarks and peer-reviewed literature</li>
+                    <li>Comparative analysis of pre-trained models across multiple performance dimensions</li>
+                    <li>Development of a structured decision framework applicable to real-world model selection</li>
+                    <li>Visual communication of complex technical trade-offs for non-technical audiences</li>
+                    <li>Cross-domain AI knowledge spanning NLP, Computer Vision, and Tabular Data</li>
+                </ul>
+            </div>
+
+            <div class="download-block">
+                <a href="Assignment_5.4_Explainability.pptx" class="btn-download">Download Presentation (PPTX)</a>
+            </div>
+
+            <div class="footer-nav">
+                <a href="index.html">&larr; Back to Portfolio</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
